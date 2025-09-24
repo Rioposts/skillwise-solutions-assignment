@@ -84,7 +84,7 @@ app.delete('/api/products/:id', (req, res) => {
   res.sendStatus(204);
 });
 
-// --- Export Products to CSV ---
+// Export Products to CSV 
 app.get('/api/products/export', (req, res) => {
   const csvWriter = createObjectCsvWriter({
     path: 'products.csv',
@@ -107,7 +107,7 @@ app.get('/api/products/export', (req, res) => {
   });
 });
 
-// --- Import Products from CSV ---
+//Import Products from CSV 
 app.post('/api/products/import', upload.single('file'), (req, res) => {
   const results = [];
   fs.createReadStream(req.file.path)
@@ -135,7 +135,7 @@ app.post('/api/products/import', upload.single('file'), (req, res) => {
     });
 });
 
-// === Inventory History API ===
+//Inventory History API 
 app.get('/api/history', (req, res) => {
   res.json(historyLog.slice(-30).reverse());
 });
