@@ -63,8 +63,8 @@ It demonstrates **search, filtering, CRUD operations, CSV import/export, and inv
 ---
 
 ## ⚡ Deployment
-- **Frontend (Netlify)**: [Live Demo Link]()  
-- **Backend (Render)**: [API Link]()  
+- **Frontend (Netlify)**: [https://skillwise-solutions-assignment.vercel.app/]()  
+- **Backend (Render)**: [https://skillwise-solutions-assignment.onrender.com/]()  
 
 > ⚠️ Note: Make sure the backend is running before testing frontend features.
 
@@ -74,7 +74,7 @@ It demonstrates **search, filtering, CRUD operations, CSV import/export, and inv
 ## 🛠️ How to Run Locally
 ```bash
 # Clone repo
-git clone https://github.com/yourusername/skillwise-assignment.git
+git clone https://github.com/Rioposts/skillwise-solutions-assignment.git
 cd skillwise-assignment
 
 # Run backend
