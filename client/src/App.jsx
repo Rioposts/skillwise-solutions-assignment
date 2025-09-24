@@ -21,7 +21,7 @@ function App() {
   const [history, setHistory] = useState([]);
 
   useEffect(() => {
-    let url = 'http://localhost:5000/api/products/search?';
+    let url = 'https://skillwise-solutions-assignment.onrender.com/api/products/search?';
     if (searchText) url += `name=${encodeURIComponent(searchText)}&`;
     if (category) url += `category=${encodeURIComponent(category)}`;
     fetch(url)
@@ -45,7 +45,7 @@ function App() {
   };
 
   const saveEdit = (id) => {
-    fetch(`http://localhost:5000/api/products/${id}`, {
+    fetch(`https://skillwise-solutions-assignment.onrender.com/api/products/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(editData),
@@ -60,7 +60,7 @@ function App() {
   const cancelEdit = () => setEditingId(null);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/api/products/${id}`, { method: 'DELETE' })
+    fetch(`https://skillwise-solutions-assignment.onrender.com/api/products/${id}`, { method: 'DELETE' })
       .then(() => setProducts(products.filter(prod => prod.id !== id)));
   };
 
@@ -77,7 +77,7 @@ function App() {
       alert("Please fill all fields");
       return;
     }
-    fetch('http://localhost:5000/api/products', {
+    fetch('https://skillwise-solutions-assignment.onrender.com/api/products', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...newProduct, stock: Number(newProduct.stock) }),
@@ -99,7 +99,7 @@ function App() {
   };
 
   const handleExport = () => {
-    fetch('http://localhost:5000/api/products/export')
+    fetch('https://skillwise-solutions-assignment.onrender.com/api/products/export')
       .then(res => res.blob())
       .then(blob => {
         const url = window.URL.createObjectURL(blob);
@@ -115,7 +115,7 @@ function App() {
     if (!file) return;
     const formData = new FormData();
     formData.append('file', file);
-    fetch('http://localhost:5000/api/products/import', {
+    fetch('https://skillwise-solutions-assignment.onrender.com/api/products/import', {
       method: 'POST',
       body: formData,
     })
@@ -127,7 +127,7 @@ function App() {
   };
 
   const fetchHistory = () => {
-    fetch('http://localhost:5000/api/history')
+    fetch('https://skillwise-solutions-assignment.onrender.com/api/history')
       .then(res => res.json())
       .then(setHistory);
   };
